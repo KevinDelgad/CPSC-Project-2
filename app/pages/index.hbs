@@ -1,29 +1,31 @@
-<div class="navbar bg-base-100">
-  <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
-  </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal p-0">
-      <li><a>Item 1</a></li>
-      <li tabindex="0">
-        <a>
-          Parent
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-        <ul class="p-2 bg-base-100">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
+<header>
+  <nav>
+    <div class="navbar bg-base-100 h-48">
+      <div class="flex-1">
+        <img class="object-fill h-48 w-48" src="../assets/images/logo-placeholder-image.png" alt="">  
+      </div>
+      <div class="flex-none w-2/5 justify-end">
+        <ul class="menu menu-horizontal p-0 space-x-20"> 
+          <li class="text-c-primary font-bold text-4xl"><a>Login</a></li>
+          <li class="btn rounded-full h-24 bg-c-primary sm:text-4xl lg:text-4xl"><a>Sign up</a></li>
         </ul>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section>
+  <div class="flex flex-col items-center gap-9 h-fit">
+    <div><h1 class="text-6xl font-bold text-c-primary">Your New Fitness Logger!</h1></div>
+    <div class=""><img class="rounded-lg w-4800 h-auto" src="../assets/images/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png" alt="placeholder image"></div>
+    <div>
+      <ul  class="btn rounded-full h-24 bg-c-primary">
+        {{#if currentUser}}
+          <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
+        {{else}}
+          <li><a class="text-3xl p-8" href="/user/signup">Get Started</a></li>
+        {{/if}}
+      </ul>
+    </div>
   </div>
-</div>
-<h1 class="text-3xl font-bold underline">Your New Fitness Logger!</h1>
-<ul>
-  {{#if currentUser}}
-    <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
-  {{else}}
-    <li><a href="/user/signup">Sign up for an account</a></li>
-  {{/if}}
-</ul>
+</section>
